@@ -5,29 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 13:49:14 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/04 22:19:44 by moabid           ###   ########.fr       */
+/*   Created: 2022/11/05 17:27:54 by moabid            #+#    #+#             */
+/*   Updated: 2022/11/05 21:52:20 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
-    Fixed a;
+int main()
+{
+    ClapTrap clap("moabid");
+    ScavTrap scav("serena");
 
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << "the result is :" << a + b << std::endl;
+    clap.attack("serena");
+    scav.takeDamage(10);
+    scav.beRepaired(10);
+
+    clap.beRepaired(10);
+    scav.attack("moabid");
+    clap.takeDamage(10);
+    clap.attack("serena");
+    scav.guardGate();
     
-return 0;
+    return 0;
 }

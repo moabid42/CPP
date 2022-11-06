@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:02:13 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/04 15:55:57 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/05 19:19:06 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ PhoneBook::~PhoneBook()
 
 Contact::Contact(void)
 {
-	first_name = "";
-	last_name = "";
+	firstname_ = "";
+	lastname_ = "";
 	nickname = "";
 	phone_number = "";
 	darkest_secret = "";
@@ -41,12 +41,12 @@ Contact::~Contact(void)
 
 std::string Contact::getFirstName()
 {
-    return (this->first_name);
+    return (this->firstname_);
 }
 
 std::string Contact::getLastName()
 {
-    return (this->last_name);
+    return (this->lastname_);
 }
 
 std::string Contact::getNickName()
@@ -132,12 +132,12 @@ int	Contact::phoneValidation(std::string phone)
 	return (1);
 }
 
-void	Contact::setFirstName(std::string f_name){
-	first_name = f_name;
+void	Contact::setFirstName(std::string fname_){
+	firstname_ = fname_;
 }
 
-void    Contact::setLastName(std::string l_name){
-    last_name = l_name;
+void    Contact::setLastName(std::string lname_){
+    lastname_ = lname_;
 }
 
 void    Contact::setNickname(std::string nick){
@@ -152,12 +152,12 @@ void    Contact::setDarkestSecret(std::string secret){
     darkest_secret = secret;
 }
 
-void PhoneBook::add_contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
+void PhoneBook::add_contact(std::string firstname_, std::string lastname_, std::string nickname, std::string phone_number, std::string darkest_secret)
 {
     Contact new_contact;
 
-    list[this->contact_count].setFirstName(first_name);
-    list[this->contact_count].setLastName(last_name);
+    list[this->contact_count].setFirstName(firstname_);
+    list[this->contact_count].setLastName(lastname_);
     list[this->contact_count].setNickname(nickname);
     list[this->contact_count].setPhoneNumber(phone_number);
     list[this->contact_count].setDarkestSecret(darkest_secret);
@@ -169,17 +169,17 @@ void PhoneBook::add_contact(std::string first_name, std::string last_name, std::
 
 void    addContact(PhoneBook &phonebook)
 {
-    std::string first_name;
-    std::string last_name;
+    std::string firstname_;
+    std::string lastname_;
     std::string nickname;
     std::string phone_number;
     std::string darkest_secret;
     Contact contact;
 
     std::cout << "Enter first name: ";
-    std::cin >> first_name;
+    std::cin >> firstname_;
     std::cout << "Enter last name: ";
-    std::cin >> last_name;
+    std::cin >> lastname_;
     std::cout << "Enter nickname: ";
     std::cin >> nickname;
     std::cout << "Enter phone number: ";
@@ -188,7 +188,7 @@ void    addContact(PhoneBook &phonebook)
         return ;
     std::cout << "Enter darkest secret: ";
     std::cin >> darkest_secret;
-    phonebook.add_contact(first_name, last_name, nickname, phone_number, darkest_secret);
+    phonebook.add_contact(firstname_, lastname_, nickname, phone_number, darkest_secret);
 }
 
 //////////////////////////// MAIN ////////////////////////////

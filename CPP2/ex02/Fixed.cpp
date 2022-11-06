@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:57:39 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/02 21:52:00 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/04 22:13:50 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other){
-    std::cout << "Copy constructor called" << std::endl;
     Fixed::operator=(other);
 }
 
@@ -31,29 +29,22 @@ Fixed &Fixed::operator=(const Fixed& other){
 }
 
 Fixed::Fixed(const int value) {
-    std::cout << "Int constructor called" << std::endl;
     this->_fixedPointValue = value << this->_fractionalBits;
-    std::cout << "The value is : " << value << " and the fixed" << this->_fixedPointValue << std::endl;
 }
 
 Fixed::Fixed(const float value) {
-    std::cout << "Float constructor called" << std::endl;
     this->_fixedPointValue = roundf(value * (1 << this->_fractionalBits));
-    std::cout << "The value is : " << value << " and the fixed" << this->_fixedPointValue << std::endl;
 }
 
 //////////////////////////DESTRUCTOR///////////////////////////
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
 }
-
 //////////////////////////GETERS///////////////////////////
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return (this->_fixedPointValue);
 }
 
@@ -98,7 +89,10 @@ Fixed Fixed::operator/(const Fixed &copy){
 }
 
 Fixed Fixed::operator++(int){
-    return (this->_fixedPointValue++);
+    Fixed temp(*this);
+
+    this->_fixedPointValue++;
+    return (temp);
 }
 
 Fixed &Fixed::operator++(){

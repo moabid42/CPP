@@ -6,11 +6,11 @@
 #    By: moabid <moabid@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/01 16:43:26 by moabid            #+#    #+#              #
-#    Updated: 2022/11/01 22:42:59 by moabid           ###   ########.fr        #
+#    Updated: 2022/11/05 21:59:18 by moabid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixedNumber
+NAME = fragtrap
 
 SRCS = $(shell find . -name "*.cpp")
 
@@ -18,7 +18,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CC = clang++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

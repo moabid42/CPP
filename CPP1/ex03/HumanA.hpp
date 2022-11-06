@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 22:02:08 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/03 15:44:49 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/05 19:19:06 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class HumanA
 {
     private:
-        std::string _name;
+        std::string name_;
         Weapon &_weapon;
     public:
         HumanA(std::string name, Weapon &weapon);

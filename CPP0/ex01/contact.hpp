@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 21:31:20 by moabid            #+#    #+#             */
-/*   Updated: 2022/10/28 22:11:22 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/05 19:19:06 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 class Contact {
     private:
-        std::string first_name;
-        std::string last_name;
+        std::string firstname_;
+        std::string lastname_;
         std::string nickname;
         std::string phone_number;
         std::string darkest_secret;
@@ -30,8 +30,8 @@ class Contact {
         
     int  phoneValidation(std::string phone);
 
-    void	setFirstName(std::string f_name);
-    void	setLastName(std::string l_name);
+    void	setFirstName(std::string fname_);
+    void	setLastName(std::string lname_);
     void	setNickname(std::string nick);
     void	setPhoneNumber(std::string phone);
     void	setDarkestSecret(std::string secret);

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 22:02:57 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/05 19:19:06 by moabid           ###   ########.fr       */
+/*   Created: 2022/11/05 23:46:27 by moabid            #+#    #+#             */
+/*   Updated: 2022/11/05 23:46:39 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-class HumanB
-{
-    private:
-        std::string name_;
-        Weapon      *_weapon;
-    public:
-        HumanB(std::string name);
-        ~HumanB();
+class ScavTrap : virtual public ClapTrap {
 
-        std::string getName();
+	public:
+		ScavTrap(void);
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const &src);
+		~ScavTrap(void);
 
-        std::string getType();
-        
-        void setWeapon(Weapon &weapon);
-        void attack();
+		ScavTrap& operator=(ScavTrap const &rhs);
+
+		void	attack(std::string const &target);
+		void	guardGate();
 };

@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 22:34:52 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/01 22:38:05 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/04 21:16:58 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ class Fixed
         ~Fixed();
 
 
-        int getRawBits( void ) const {
-            std::cout << "getRawBits member function called" << std::endl;
-            return (this->_fixedPointValue);
-        }
-        void setRawBits( int const raw ) {
-            this->_fixedPointValue = raw;
-        }
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 };

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 21:54:32 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/04 16:00:24 by moabid           ###   ########.fr       */
+/*   Created: 2022/11/05 17:24:14 by moabid            #+#    #+#             */
+/*   Updated: 2022/11/05 19:20:26 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Fixed.hpp"
+#include <iostream>
 
-class Point
+class ClapTrap
 {
     private:
-        Fixed const _x;
-        Fixed const _y;
-    
+        std::string name_;
+        int         hit_points_;
+        int         energy_points_;
+        int         attack_damage_;
     public:
-        Point();
-        Point(float const x, float const y);
-        Point(Point const &copy);
-        Point &operator=(Point const &copy);
-        ~Point();
-    
-    void setX(Fixed const x);
-    void setY(Fixed const y);
+        ClapTrap(std::string name);
+        ~ClapTrap();
 
-    Fixed const getX();
-    Fixed const getY();
+        void    attack(const std::string &target);
+        void    takeDamage(unsigned int amount);
+        void    beRepaired(unsigned int amount);
 };
-
-bool    bsp( Point const a, Point const b, Point const c, Point const point);

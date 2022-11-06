@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 22:02:57 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/05 19:19:06 by moabid           ###   ########.fr       */
+/*   Created: 2022/11/05 23:46:49 by moabid            #+#    #+#             */
+/*   Updated: 2022/11/05 23:46:55 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-class HumanB
-{
-    private:
-        std::string name_;
-        Weapon      *_weapon;
-    public:
-        HumanB(std::string name);
-        ~HumanB();
+class FragTrap : virtual public ClapTrap {
 
-        std::string getName();
+	private:
 
-        std::string getType();
-        
-        void setWeapon(Weapon &weapon);
-        void attack();
+	public:
+		FragTrap();
+		FragTrap(std::string const name);
+		FragTrap(FragTrap const &src);
+		~FragTrap();
+
+	FragTrap &operator=(FragTrap const &rhs);
+
+	void highFiveGuys(void);
 };
