@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 23:57:22 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/09 00:25:00 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/09 00:10:59 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ class Form
         Form    &operator=(const Form &obj);
         void    beSigned(Bureaucrat & bureaucrat);
         void    execute(Bureaucrat const &executor) const;
+
+        virtual Form *clone(std::string Target) = 0;
 
         class GradeTooHighException : public std::exception {
             public:

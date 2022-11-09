@@ -6,7 +6,7 @@
 /*   By: moabid <moabid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 23:57:12 by moabid            #+#    #+#             */
-/*   Updated: 2022/11/09 00:18:22 by moabid           ###   ########.fr       */
+/*   Updated: 2022/11/09 00:10:00 by moabid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ class	Bureaucrat
 
 		class GradeTooHighException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+		public:
+			const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+		public:
+			const char *what() const throw();
 		};
 
 		void	incrementGrade();
