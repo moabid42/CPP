@@ -1,7 +1,7 @@
 #include "iostream"
 #include <string>
 
-class Base{
+class Base {
 	public:
 		virtual ~Base() {}
 };
@@ -72,7 +72,6 @@ void	identify(Base& p)
 	}
 	catch (std::exception &e) {}
 }
-
 
 int main(void)
 {

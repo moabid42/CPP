@@ -63,7 +63,10 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__tree": "cpp",
+        "list": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "Google"
 }
